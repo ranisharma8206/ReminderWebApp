@@ -143,6 +143,72 @@
 /* Set button */
 .set_btn{
   position:relative;
-  top:80px; 
+  top:80px;
   left:-10px;
+}
+
+/* head nav of show_reminder.html */
+.main_head_nav{
+  background-color:#1e88e5;
+  height:80px;
+}
+
+.choose_date{
+  float:right;
+  position:relative;
+  top:12px;
+}
+.today{
+  color:white;
+  font-weight:bold;
+  position:relative;
+  top:-60px;
+  float: right;
+  right:50px;
+  font-size:30px;
+}
+.reminders_container{
+  position:relative;
+  top:30px;
+}
+.reminder_box{
+  position: relative;
+  height:60px;
+  margin-top: 20px;
+  width:100%;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  box-shadow: 5px 5px #e0e0e0;
+}
+.reminder_box_content{
+  position:relative;
+  top:10px;
+  left:10px;
+}
+.reminder_box_content p{
+  font-size:12px;
+}
+.reminder_box_content .icon_backround{
+  position:relative;
+  height:45px;
+  width:48px;
+  background-color:#bbdefb;
+  float:right;
+  top:-60px;
+  right:20px;
+}
+.reminder_box_content label{
+  font-weight:bold;
+}
+.reminder_box_content .icon_backround i{
+  position:relative;
+  float:right;
+  top:20px;
+  right:5px
+}
+.add_reminder_icon{
+  position:relative;
+  bottom:-80px; 
+  float:right;
+  left:50px;
 }
