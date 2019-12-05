@@ -38,25 +38,9 @@
   position:relative;
   top:25px;
 }
-.my_box{
-  height:60px;
-  width:60px;
-  border-radius:10px;
-  box-shadow: 3px 3px #bdbdbd ;
-}
 .my_box_selected{
    position: relative;
    background-color:#1e88e5;
-}
-.my_box i{
-  position:relative;
-  top:15px;
-  left:20px;
-}
-.my_box p{
-  font-size:12px;
-  position:relative;
-  top:15px;
 }
 .my_box_selected p{
   color:white;
@@ -64,6 +48,24 @@
   position:relative;
   top:15px;
 }
+.my_box{
+  height:60px;
+  width:60px;
+  border-radius:10px;
+  box-shadow: 3px 3px #bdbdbd ;
+}
+.my_box i{
+  position:relative;
+  top:15px;
+  left:20px;
+}
+
+.my_box p{
+  font-size:12px;
+  position:relative;
+  top:15px;
+}
+
 
 /* Set time Area */
 .setTime p{
@@ -208,7 +210,7 @@
 }
 .add_reminder_icon{
   position:relative;
-  bottom:-80px; 
+  bottom:-80px;
   float:right;
   left:50px;
 }
