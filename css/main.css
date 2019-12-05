@@ -1,0 +1,148 @@
+/* head nav of set_reminder.html */
+.head_nav{
+  background-color:#1e88e5;
+  height:80px;
+}
+.head_nav .my_icon{
+  position:relative;
+  left:0px;
+  top:25px;
+}
+.head_nav .my_reminder{
+  color:white;
+  font-weight: bold;
+  position:relative;
+}
+
+/* Medicine name area */
+.med_name .name{
+  font-size:14px;
+  position:relative;
+  top:30px;
+  left:-10px;
+}
+.med_name .my_input_medicine{
+  position:relative;
+  top:25px;
+  left:-10px;
+}
+
+/* Medicine type area */
+.med_type .type{
+  font-size:14px;
+  position:relative;
+  top:30px;
+  left:-10px;
+}
+.med_type .row{
+  position:relative;
+  top:25px;
+}
+.my_box{
+  height:60px;
+  width:60px;
+  border-radius:10px;
+  box-shadow: 3px 3px #bdbdbd ;
+}
+.my_box_selected{
+   position: relative;
+   background-color:#1e88e5;
+}
+.my_box i{
+  position:relative;
+  top:15px;
+  left:20px;
+}
+.my_box p{
+  font-size:12px;
+  position:relative;
+  top:15px;
+}
+.my_box_selected p{
+  color:white;
+  font-size:12px;
+  position:relative;
+  top:15px;
+}
+
+/* Set time Area */
+.setTime p{
+  font-size:14px;
+  position:relative;
+  left:-10px;
+}
+.time_field{
+  position:relative;
+  left:-10px;
+  height:50px;
+  width: 200px;
+  background-color:#bbdefb;
+  border-radius:10px;
+}
+.time_field p{
+  position: relative;
+  top:4px;
+  font-size:30px;
+  font-weight:bold;
+}
+.add_another_time{
+  position:relative;
+  left:-15px;
+  top:5px;
+}
+.date{
+  position:relative;
+  top:60px;
+}
+.setDate p{
+  font-size:14px;
+  position:relative;
+  left:-10px;
+}
+.date_field{
+  position:relative;
+  left:-10px;
+  height:50px;
+  width: 200px;
+  background-color:#bbdefb;
+  border-radius:10px;
+}
+.date_field p{
+  position: relative;
+  top:8px;
+  font-size:20px;
+  font-weight:bold;
+}
+.date_field i{
+  position:relative;
+  float:right;
+  top:-30px;
+  right:10px;
+}
+
+/* Amount area */
+.amount, .frequency{
+  position:relative;
+  top:50px;
+}
+.amountNo p, .frequencyNo p{
+  font-size:14px;
+  position:relative;
+  top:30px;
+  left:-10px;
+}
+.my_input_amount, .my_input_frequency{
+  position:relative;
+  top:25px;
+  left:-10px;
+}
+.my_input_amount{
+  width:200px;
+}
+
+/* Set button */
+.set_btn{
+  position:relative;
+  top:80px; 
+  left:-10px;
+}
