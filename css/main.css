@@ -112,36 +112,36 @@
 .date_field input[type=text]{
   position: relative;
   top:8px;
-  font-size:20px;
+  font-size:14px;
   font-weight:bold;
 }
 .date_field i{
   position:relative;
   float:right;
-  top:-30px;
-  right:150px;
+  top:-25px;
+  right:200px;
 
 }
 
-/* Amount area */
+/* Amount and frequency area */
 .amount, .frequency{
   position:relative;
   top:50px;
 }
-.amountNo p, .frequencyNo p{
+.amountNo p,.frequencyNo p{
   font-size:14px;
   position:relative;
   top:30px;
   left:-10px;
 }
-.my_input_amount, .my_input_frequency{
+.my_input_amount,.my_input_frequency{
   position:relative;
   top:25px;
   left:-10px;
-}
-.my_input_amount{
   width:200px;
 }
+
+
 
 /* Set button */
 .set_btn{

@@ -97,7 +97,7 @@
   <div class="date_field" style="">
     <input type="text" class="datepicker form-control" placeholder="Today" style="">
     <!-- <p class="text-center" style="">21.03.2019</p> -->
-    <i class="datepick far fa-calendar-alt fa-lg blue-text" style="" onclick="myFunction()"></i>
+    <!-- <i class="datepick far fa-calendar-alt fa-lg blue-text" style="" onclick="myFunction()"></i> -->
   </div>
 </div>
 
@@ -112,21 +112,25 @@
   </div>
 </div>
 
-<div class="container-fluid frequency" style="">
+
+<div class="container-fluid frequency">
   <div class="frequencyNo">
     <p style="">Repeat</p>
   </div>
-  <div class="my_input_frequency" style="">
-    <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">Frequency</button>
-
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Daily</a>
-      <a class="dropdown-item" href="#">Today</a>
-      <a class="dropdown-item" href="#">Weekely</a>
+  <div class="input-group mb-3 my_input_frequency" style="">
+    <div class="input-group-prepend" >
+      <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
     </div>
+    <select class="browser-default custom-select" id="inputGroupSelect01" >
+      <option selected>Frequency...</option>
+      <option value="1">Today</option>
+      <option value="2">Daily</option>
+      <option value="3">Weekly</option>
+      <option value="3">Monthly</option>
+    </select>
   </div>
 </div>
+
 
 <div class="container-fluid set_btn" style="">
   <button type="button" class="btn btn-primary">Set</button>
