@@ -79,12 +79,15 @@
   <div class="setTime">
     <p style="">Time</p>
   </div>
+  <div class="rani">
   <div class="time_field" style="">
-    <p class="text-center" style="">06:30</p>
+    <input type="text" class="manual-operations-input1 form-control" placeholder="Now" style="">
   </div>
   <div class="add_another_time" style="">
-    <button type="button" class="btn btn-outline-info btn-rounded waves-effect">Add another time</button>
+    <button type="button" class="check-minutes1 btn btn-outline-info btn-rounded waves-effect" >Set Time</button>
   </div>
+</div>
+  <button type="button" class="btn btn-outline-info btn-rounded waves-effect" id="" onclick="" style="left:-15px;">Add another time</button>
 </div>
 
 <div class="container-fluid date" style="">
@@ -92,8 +95,9 @@
     <p style="">Date</p>
   </div>
   <div class="date_field" style="">
-    <p class="text-center" style="">21.03.2019</p>
-    <i class="far fa-calendar-alt fa-lg blue-text" style=""></i>
+    <input type="text" class="datepicker form-control" placeholder="Today" style="">
+    <!-- <p class="text-center" style="">21.03.2019</p> -->
+    <i class="datepick far fa-calendar-alt fa-lg blue-text" style="" onclick="myFunction()"></i>
   </div>
 </div>
 
@@ -154,6 +158,7 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script type="text/javascript" src="js/myScript.js"></script>
   <script>
+    $('.datepicker').pickadate();
   </script>
 </body>
 
