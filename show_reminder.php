@@ -20,24 +20,10 @@
 <body>
 
      
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">IIT BHILAI</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="set_reminder.html">Set Remender</a>
-            </li>
-        </div>
-    </nav> 
+    <?php include 'inc/navbar.php' ?>
     
     <div class="container">
-      <h1>TODAY</h1>
+      <h1 class="display-3">TODAY</h1>
       <div class="container-fluid reminders_container" style="">
         <div class="reminder_box" style="">
           <div class="custom-control custom-checkbox reminder_box_content" style="">
