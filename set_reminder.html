@@ -15,127 +15,173 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
-</head>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script>
+    $(function () {
+      $('form').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+          success: function () {
+            if( !$('#input_medicine').val() ) {
+              alert("Fill all the inputs!");
+              return;
+            }
+            if( !$('#input_amount').val() ) {
+              alert("Fill all the inputs!");
+              return;
+            }
+            if( !$('#input_time').val() ) {
+              alert("Fill all the inputs!");
+              return;
+            }
+            if( !$('#input_date').val() ) {
+              alert("Fill all the inputs!");
+              return;
+            }
+            else{
+              x=1;
+              $.ajax({
+                type: 'post',
+                url: 'getuser.php',
+                data: $('form').serialize(),
+                success: function () {
+                  alert('form was submitted');
+                  location.reload();
+                }
+              });
+          }
+          }
+        });
+      });
 
-<body>
-
-<div class="container-fluid head_nav" >
-  <div class="my_icon" >
-    <i class="fas fa-arrow-left white-text fa-lg"></i>
-  </div>
-  <div class="text-center my_reminder">
-    <h5 style="">Add a reminder</h5>
-  </div>
-</div>
-
-<div class="container-fluid med_name">
-  <div class="name">
-    <p style="">Medicine Name</p>
-  </div>
-  <div class="my_input_medicine" style="">
-    <form class="text-center" action="#!">
-    <input type="text" id="input_medicine" class="form-control mb-4" placeholder="ex: Burana 400mg">
-    </form>
-  </div>
-</div>
-
-<div class="container-fluid med_type">
-  <div class="type">
-    <p style="">Type</p>
-  </div>
-  <div class="row" id="sel_type" style="">
-    <div class="col-3" style="">
-      <div class="my_box my_box1" style="">
-        <i class="fas fa-capsules fa-lg blue-text" style=""></i>
-        <p class="text-center" style="">Capsules</p>
+    });
+  </script>
+  </head>
+  <body>
+  <!-- Nav bar -->
+    <div class="container-fluid head_nav" >
+      <div class="my_icon" >
+        <i class="fas fa-arrow-left white-text fa-lg"></i>
+      </div>
+      <div class="text-center my_reminder">
+        <h5 style="">Add a reminder</h5>
       </div>
     </div>
 
-    <div class="col-3" style="">
-      <div class="my_box my_box2" style="">
-        <i class="fas fa-tablets fa-lg blue-text" style=""></i>
-        <p class="text-center" style="">Tablets</p>
+  <!-- Medicine name area  -->
+    <div class="container-fluid med_name">
+      <div class="name">
+        <p style="">Medicine Name</p>
+      </div>
+      <div class="my_input_medicine" style="">
+        <form class="text-center" action="#!">
+        <input type="text" name="med_name" id="input_medicine" class="form-control mb-4 ranu" placeholder="ex: Burana 400mg" style="">
+        </form>
       </div>
     </div>
 
-    <div class="col-3" style="">
-      <div class="my_box my_box3" style="">
-        <i class="fas fa-eye-dropper fa-lg blue-text" style=""></i>
-        <p class="text-center" style="">Drops</p>
+  <!-- Medicine Type Area -->
+    <div class="container-fluid med_type">
+      <div class="type">
+        <p style="">Type</p>
+      </div>
+      <form class="text-center" action="#!">
+      <input type="text" name="type" id="type_of" class="form-control mb-4" placeholder="ex: Burana 400mg" style="display:none;">
+      </form>
+      <div class="row" id="sel_type" style="">
+        <div class="col-3" style="">
+          <div class="my_box my_box1" style="">
+            <i class="fas fa-capsules fa-lg blue-text" style=""></i>
+            <p class="text-center" style="">Capsules</p>
+          </div>
+        </div>
+
+        <div class="col-3" style="">
+          <div class="my_box my_box2" style="">
+            <i class="fas fa-tablets fa-lg blue-text" style=""></i>
+            <p class="text-center" style="">Tablets</p>
+          </div>
+        </div>
+
+        <div class="col-3" style="">
+          <div class="my_box my_box3" style="">
+            <i class="fas fa-eye-dropper fa-lg blue-text" style=""></i>
+            <p class="text-center" style="">Drops</p>
+          </div>
+        </div>
+
+        <div class="col-3" style="">
+          <div class="my_box my_box4" style="">
+            <i class="fas fa-syringe fa-lg blue-text" style=""></i>
+            <p class="text-center" style="">Injection</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col-3" style="">
-      <div class="my_box my_box4" style="">
-        <i class="fas fa-syringe fa-lg blue-text" style=""></i>
-        <p class="text-center" style="">Injection</p>
+  <!-- Form for time,date,amount, frequency and set button -->
+    <form>
+    	<div class="container-fluid" style="position:relative; top:40px">
+      <div class="setTime">
+        <p style="">Time</p>
+      </div>
+      <div class="rani">
+      <div class="time_field" style="">
+        <input type="text" name="time" id="input_time" class="manual-operations-input1 form-control" placeholder="Now" style="" autocomplete="off">
+      </div>
+      <div class="add_another_time" style="">
+        <button type="button" class="check-minutes1 btn btn-outline-info btn-rounded waves-effect" >Set Time</button>
+      </div>
+    </div>
+      <button type="button" class="btn btn-outline-info btn-rounded waves-effect" id="" onclick="" style="left:-15px;">Add another time</button>
+    </div>
+
+    <div class="container-fluid date" style="">
+      <div class="setDate">
+        <p style="">Date</p>
+      </div>
+      <div class="date_field" style="">
+        <input type="text" name="date" id="input_date" class="datepicker form-control" placeholder="Today" style="" autocomplete="off">
       </div>
     </div>
 
-  </div>
-</div>
-
-<div class="container-fluid" style="position:relative; top:40px">
-  <div class="setTime">
-    <p style="">Time</p>
-  </div>
-  <div class="rani">
-  <div class="time_field" style="">
-    <input type="text" class="manual-operations-input1 form-control" placeholder="Now" style="">
-  </div>
-  <div class="add_another_time" style="">
-    <button type="button" class="check-minutes1 btn btn-outline-info btn-rounded waves-effect" >Set Time</button>
-  </div>
-</div>
-  <button type="button" class="btn btn-outline-info btn-rounded waves-effect" id="" onclick="" style="left:-15px;">Add another time</button>
-</div>
-
-<div class="container-fluid date" style="">
-  <div class="setDate">
-    <p style="">Date</p>
-  </div>
-  <div class="date_field" style="">
-    <input type="text" class="datepicker form-control" placeholder="Today" style="">
-    <!-- <p class="text-center" style="">21.03.2019</p> -->
-    <!-- <i class="datepick far fa-calendar-alt fa-lg blue-text" style="" onclick="myFunction()"></i> -->
-  </div>
-</div>
-
-<div class="container-fluid amount" style="">
-  <div class="amountNo">
-    <p style="">Amount</p>
-  </div>
-  <div class="my_input_amount" style="">
-    <form class="text-center" action="#!">
-    <input type="text" id="input_medicine" class="form-control mb-4" placeholder="ex:1">
-    </form>
-  </div>
-</div>
-
-
-<div class="container-fluid frequency">
-  <div class="frequencyNo">
-    <p style="">Repeat</p>
-  </div>
-  <div class="input-group mb-3 my_input_frequency" style="">
-    <div class="input-group-prepend" >
-      <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+    <div class="container-fluid amount" style="">
+      <div class="amountNo">
+        <p style="">Amount</p>
+      </div>
+      <div class="my_input_amount" style="">
+        <input type="number" name="amount" id="input_amount" class="form-control mb-4" placeholder="ex:1" autocomplete="off">
+      </div>
     </div>
-    <select class="browser-default custom-select" id="inputGroupSelect01" >
-      <option selected>Frequency...</option>
-      <option value="1">Today</option>
-      <option value="2">Daily</option>
-      <option value="3">Weekly</option>
-      <option value="3">Monthly</option>
-    </select>
-  </div>
-</div>
 
+    <div class="container-fluid frequency">
+      <div class="frequencyNo">
+        <p style="">Repeat</p>
+      </div>
+      <div class="input-group mb-3 my_input_frequency" style="">
+        <div class="input-group-prepend" >
+        </div>
+        <select name="frequency" class="browser-default custom-select" id="inputGroupSelect01" >
+          <option selected>No Repeat</option>
+          <option >Today</option>
+          <option >Sunday</option>
+          <option >Monday</option>
+          <option >Tuesday</option>
+          <option >Wednesday</option>
+          <option >Thrusday</option>
+          <option >Friday</option>
+          <option >Saturday</option>
+          <option >Daily</option>
+          <option >Weekly</option>
+          <option >Monthly</option>
+        </select>
+      </div>
+    </div>
 
-<div class="container-fluid set_btn" style="">
-  <button type="button" class="btn btn-primary">Set</button>
-</div>
-
+    <div class="container-fluid set_btn" style="">
+      <button type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="runcont()">Set</button>
+    </div>
+  </form>
 
 
 
@@ -163,6 +209,44 @@
   <script type="text/javascript" src="js/myScript.js"></script>
   <script>
     $('.datepicker').pickadate();
+    $(".my_box1 i").addClass("white-text");
+    document.getElementById("type_of").value = "Capsules";
+    $(".my_box1").addClass("my_box_selected");
+    var x = 0;
+    function runcont(){
+      if( !$('#input_medicine').val() ) {
+        x=0;
+        $("#input_medicine").addClass("keshav");
+      }
+      else if($('#input_medicine').val()){
+        $("#input_medicine").removeClass("keshav");
+      }
+      if( !$('#input_amount').val() ) {
+        x=0;
+        $("#input_amount").addClass("keshav");
+      }
+      else if($('#input_amount').val()){
+        $("#input_amount").removeClass("keshav");
+      }
+      if( !$('#input_time').val() ) {
+        x=0;
+        $("#input_time").addClass("keshav");
+      }
+      else if($('#input_time').val()){
+        $("#input_time").removeClass("keshav");
+      }
+      if( !$('#input_date').val() ) {
+        x=0;
+        $("#input_date").addClass("keshav");
+      }
+      else if($('#input_date').val()){
+        $("#input_date").removeClass("keshav");
+      }
+      if(x==0){
+      setTimeout(runcont,500);
+    }
+    }
+
   </script>
 </body>
 

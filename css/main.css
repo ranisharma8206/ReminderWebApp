@@ -215,3 +215,8 @@
   float:right;
   left:50px;
 }
+
+/* warning class */
+.keshav{
+  border-color:red;
+}
